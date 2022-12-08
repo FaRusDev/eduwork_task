@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //destructuring array
+        const namaSiswa = ["adi", "budi", "cedi", "dodi", "edi"];
+        const [siswa1, siswa2, ...siswaLain] = namaSiswa;
+        console.log(siswaLain);
+
+        //destructuring object
+        const produk = {
+            id:'dsfdasf',
+            namaProduk:'balsem',
+            harga:10000,
+            kategori:{
+                namaKategori:'obat luar',
+                jenisKategori:'oles'
+            }
+        }
+        const {namaProduk,kategori:{namaKategori},...lainnya} = produk
+        console.log(namaKategori, namaProduk)
+
+        //destructuring function
+        function ambilHargaDanId({id,harga}) {
+            console.log(id,harga)
+        }
+        ambilHargaDanId(produk)
+
+        //destructuring dengan alias & default
+        function aliasDefault({id:pengenal, sisastok=5}){
+            console.log(pengenal, sisastok)
+        }
+        aliasDefault(produk)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+udh saya coba biar responsive tapi masih ada bberapa classyg bikin bingung di padding sama marginnya,
+apa nggak ada otomatisnya yg standard bootstrap biar klo pake kelasnya 
+langsung auto padding sama auto margin ? nggak nemu soalnya,
+terutama untuk bikin di tampilan buat screen yg besar
+terus klo "aria" di html class bootstrapnya fungsinya apa ya kak ? udh baca2 tpi blum ngerti

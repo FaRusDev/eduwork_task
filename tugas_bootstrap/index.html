@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+        .backlinear{
+            background: linear-gradient(180deg, #FFFFFF 0%, #E2F1FF 100%);
+        }
+
+        .ungu{
+            border-color: purple;
+            color: purple;
+            padding: 2px 20px;
+        }
+
+        .ungu2{
+            border-color: none;
+            color: white;
+            background-color: purple;
+            padding: 2px 20px;
+        }
+
+        .ungu:hover{
+            color: white;
+            background-color: purple;
+        }
+
+        .ungu2:hover{
+            border-color: purple;
+            color: purple;
+            padding: 2px 20px;
+            background:none;
+        }
+
+        .navbar-nav > li {
+            margin: 0 30px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md fixed-top px-3">
+        <a class="navbar-brand" href="#">
+            <img src="images/Logo.png" alt="logo" srcset="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse " id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" data-toggle="dropdown">About <span><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+                
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Login</a>
+            </li>
+            
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn ungu rounded-pill rounded-lg" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main>
+        <section class="mt-5">
+            <div class="container-fluid backlinear px-5">
+                <div class="row py-5">
+                    <div class="col d-flex flex-column justify-content-center m-2 px-5">
+                        <h1 class="text-left">Your data with</h1>
+                        <h1 class="text-left">real-time analytics</h1>
+                        <p>Harness the potential of Big Data Analytics & Cloud Services and become a data-driven organization with Needle tail</p>
+                        
+                        <div class="d-flex">
+                            <div class="mr-2">
+                                <button class="btn ungu2 rounded-pill  p-3 ">Start Free Trial</button>
+                            </div>
+                            <div class="ml-2">
+                                <button class="btn ungu rounded-pill p-3">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col d-flex justify-content-center align-items-center m-2 ">
+                        <img class="img-fluid" src="./images/image1.png" alt="">
+                    </div>
+                </div> 
+            </div> 
+        </section>
+
+        <section class="my-5 px-5">
+            <div class="d-flex justify-content-center">
+                <p class="ungu text-center btn rounded-pill"><i class="fa fa-eye" aria-hidden="true"></i> Why Qubly</p>
+            </div>
+            <h1 class="text-center">Get actionable insights from Big Data in 3 steps</h1>
+            <p class="text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            <div class="container-fluid">   
+                <div class="row text-center justify-content-center">
+                    <div class="col-md-3 col-sm-12">
+                        <div>
+                            <img class="" src="./images/icon1.png" alt="">
+                            <h3 class="my-4">Valuable business insights</h3>
+                            <p>Collect processed & cleansed data that is ready to be analyzed to gather valuable business insights.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 mx-3">
+                        <div >
+                            <img class="" src="./images/icon2.png" alt="">
+                            <h3 class="my-4">Powerful Algorithms</h3>
+                            <p>With the help of powerful algorithms, quality rules & techniques, obtain simplified & enriched data.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div >
+                            <img class="" src="./images/icon3.png" alt="">
+                            <h3 class="my-4">Data in real-time</h3>
+                            <p>Collect data in real-time from multiple channels and move it into a data lake, in its original format.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/683e54afe6.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

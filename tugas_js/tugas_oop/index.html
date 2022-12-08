@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+
+</head>
+<body>
+    <div class="" id="app"></div>
+
+
+    <script>
+
+        class TugasModulTable {
+
+            constructor(data){
+                this.data = data;
+            }
+
+            renderToHtml(app) {
+
+                let header='';
+                let body = '';
+                let dataBodyFix =[]
+                let arr = []
+                let c = []
+                
+                //tampil header
+                this.data.columns.forEach(element => {
+                    header = header + `<th scope="col">${element}</th>`
+                });
+
+
+                //cara semalam
+
+                // this.data.data[0].forEach(element => {
+                //     y = `<td>${element[element]}</td>` + y
+                // });
+
+                // this.data.data.map((tes) => {
+                //     //data awal yg berhasil
+                //     // z =  `<tr><td>${tes[0]}</td><td>${tes[1]}</td><td>${tes[2]}</td></tr>` + z
+                    
+                //     x.push(tes)
+
+                // })
+
+                //ambil jumlah data push ke arr
+                let jumlah_data = this.data.data
+                jumlah_data.forEach((data)=>{
+                    arr.push(data)
+                })
+
+                //looping untuk ambil data dari array 0
+                for (let index = 0; index < arr.length; index++) {
+                    console.log(arr[index])
+
+                    //tambahkan element <td> ke hasil array lalu simpan di var c
+                    for (let j = 0; j < arr[index].length; j++) {
+                        c.push(`<td>${arr[index][j]}</td>`)
+                    }
+                }
+
+                console.log(c)
+                //hasilnya panjang
+                // ['<td>John</td>', '<td>john@example.com</td>', '<td>(353) 01 222 3333</td>', '<td>Mark</td>', '<td>mark@gmail.com</td>', '<td>(01) 22 888 4444</td>', '<td>Mark</td>', '<td>mark@gmail.com</td>', '<td>(01) 22 888 4444</td>', '<td>Mark</td>', '<td>mark@gmail.com</td>', '<td>(01) 22 888 4444</td>']
+
+                //looping untuk pisah2kan data yg ada di var c tergantung panjang array
+                for (let index = 0; index < arr.length; index++) {
+
+                    dataBodyFix.push(c.splice(0,arr[index].length))
+                    
+                }
+
+                //looping untuk tambah ke variabel z biar tampil
+                for (let index = 0; index < jumlah_data.length; index++) {
+                    body += `<tr>${dataBodyFix[index]}</td>`
+                }
+
+
+                app.innerHTML = `  
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            ${header}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${body}
+                    </tbody>
+                </table>`               
+            }
+        }
+
+        const tugas = new TugasModulTable({
+            columns: ['Name', 'Email', 'Phone Number'],
+            data: [
+                ['John', 'john@example.com', '(353) 01 222 3333'],
+                ['Mark', 'mark@gmail.com',   '(01) 22 888 4444'],
+                ['Mark', 'mark@gmail.com',   '(01) 22 888 4444'],
+                ['Mark', 'mark@gmail.com',   '(01) 22 888 4444'],
+                ['John', 'john@example.com', '(353) 01 222 3333'],
+
+            ]
+        }).renderToHtml(document.getElementById('app'));
+
+        
+    </script>
+    
+      <!-- bootstrap -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/683e54afe6.js" crossorigin="anonymous"></script>
+  
+</body>
+</html>
