@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        .hidden{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <table class="table" id="tabel">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>company</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+           
+        </tbody>
+    </table>
+
+   <p id="loading">loading</p>
+    <script>
+        const trow = document.getElementById('trow')
+        const tableData = document.createDocumentFragment();
+        
+        var tbodyRef = document.getElementById('tabel').getElementsByTagName('tbody')[0];
+
+        const loading = document.getElementById('loading')
+        function ambilData(url, fungsi){
+
+            try {
+                fetch(url)
+                .then((response) => response.json())
+                .then((dataWeb) => {
+
+                    //untuk tes tampil loading ketika load data
+                    setTimeout(() => {
+                        loading.classList.add('hidden')
+                        return fungsi(dataWeb)
+                    }, 1000);
+                })
+            } catch (error) {
+                console.log('error data', error)
+            }
+            
+        }
+
+        //ambil data ke variabel dt
+        const data = ambilData('https://jsonplaceholder.typicode.com/users',function(data){
+            console.log(data)
+
+            let tbdata = ""
+            const tbody = document.getElementById('tbody')
+            data.map((d) => {
+                tbdata += ` <tr>
+                <td>${d.id}</td>
+                <td>${d.name}</td>
+                <td>${d.username}</td>
+                <td>${d.email}</td>
+                <td>${d.address.street} , ${d.address.suite} , ${d.address.city}, ${d.address.zipcode}</td>
+                <td>${d.company.name}</td>
+            </tr>
+                `
+            })
+
+            
+            tbody.innerHTML=tbdata
+        })
+    </script>
+
+    
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/683e54afe6.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
