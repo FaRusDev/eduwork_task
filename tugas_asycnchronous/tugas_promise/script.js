@@ -2,8 +2,6 @@ const loadingText = document.getElementById('loading')
 const API_KEY = '8533aefa02d7472c9016654acd4709cd';
 
 
-
-
 //ambil data
 const ambilData = async (api_key) => {
         try {
